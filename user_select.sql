@@ -10,7 +10,14 @@ BEGIN
 	  END
 	  ELSE 
 	  BEGIN 
-	    SELECT * FROM [Db_Interview].[dbo].[Users] WHERE [UserID] = @id_user
+	    SELECT [Category] AS 'Пол',
+               [LastName] AS 'Фамилия',
+               [FirstName] AS 'Имя',
+               [MiddleName] AS 'Отчество',
+               [Age] AS 'Возраст',
+               [RegDate] AS 'Дата_регистрации' 
+		FROM [Db_Interview].[dbo].[Users] 
+		WHERE [UserID] = @id_user
 	  END
 
 end
