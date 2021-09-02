@@ -10,7 +10,14 @@ BEGIN
 	  END
 	  ELSE 
 	  BEGIN 
-	    SELECT DISTINCT * FROM [Db_Interview].[dbo].[Users] WHERE [UserID] = @id_user
+	    SELECT CASE WHEN [Category] = 1 THEN 'Мужчина' ELSE 'Женщина' END AS 'Пол',
+               [LastName] AS 'Фамилия',
+               [FirstName] AS 'Имя',
+               [MiddleName] AS 'Отчество',
+               [Age] AS 'Возраст',
+               [RegDate] AS 'Дата_регистрации' 
+		FROM [Db_Interview].[dbo].[Users] 
+		WHERE [UserID] = @id_user
 	  END
 
 end
