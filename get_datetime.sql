@@ -1,7 +1,7 @@
 CREATE PROCEDURE [dbo].[get_datetime] AS
 BEGIN
       
-	 SELECT getdate() AS 'Общая_дата',
+	 SELECT DATEADD(DAY, DATEDIFF(DAY, 0, GETDATE()) ,0) AS 'Общая_дата',
 	        DATEPART(YEAR, getdate()) AS 'Год',
 	        DATEPART(MONTH, getdate()) AS 'Месяц',	 
 		    DATEPART(DAY, getdate()) AS 'Число',
