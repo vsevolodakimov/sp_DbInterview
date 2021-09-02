@@ -10,7 +10,7 @@ BEGIN
 	  END
 	  ELSE 
 	  BEGIN 
-	    SELECT * FROM [Db_Interview].[dbo].[Users] WHERE [UserID] = @id_user
+	    SELECT DISTINCT * FROM [Db_Interview].[dbo].[Users] WHERE [UserID] = @id_user
 	  END
 
 end
